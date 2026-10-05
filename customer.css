@@ -1,0 +1,121 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #337f81;
+}
+
+.sidebar {
+    position: fixed;
+    width: 230px;
+    height: 100vh;
+    background: #222;
+    color: white;
+    padding: 25px 15px;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.sidebar p {
+    text-align: center;
+    color: #aaa;
+    font-size: 13px;
+    margin-bottom: 30px;
+}
+
+.sidebar a {
+    display: block;
+    padding: 13px;
+    color: white;
+    text-decoration: none;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+.sidebar a:hover,
+.sidebar .active {
+    background: #444;
+}
+
+.logout {
+    margin-top: 30px !important;
+}
+
+.main {
+    margin-left: 230px;
+    padding: 30px;
+}
+
+.subtitle {
+    color: #060404;
+}
+
+.form-box,
+.table-box {
+    background: white;
+    padding: 25px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px #ccc;
+}
+
+.form-box input {
+    padding: 11px;
+    margin: 5px;
+    width: 30%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 11px 20px;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #555;
+}
+
+.search-box {
+    margin-top: 20px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #702e2e;
+    border-radius: 5px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th,
+td {
+    padding: 12px;
+    border-bottom: 1px solid #8c0c0c;
+    text-align: left;
+}
+
+th {
+    background: #333;
+    color: rgb(232, 232, 232);
+}
+
+.delete {
+    background: #b00020;
+    padding: 7px 12px;
+}
