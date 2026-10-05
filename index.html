@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mall Management System</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #ffffff;
+            margin: 0;
+        }
+
+        .container {
+            width: 450px;
+            margin: 80px auto;
+            background: rgb(255, 251, 253);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #e7e2e2;
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            border: 1px solid #999;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .login-btn {
+            width: 100%;
+            background: #f0430e;
+            color: rgb(252, 252, 252);
+            font-size: 16px;
+        }
+
+        #dashboard {
+            display: none;
+            width: 90%;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            box-shadow: 0 0 10px #aaa;
+        }
+
+        .modules {
+            margin-top: 20px;
+        }
+
+        #message {
+            text-align: center;
+            color: green;
+        }
+
+        #error {
+            text-align: center;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- LOGIN PAGE -->
+
+<div class="container" id="loginPage">
+
+    <h1>Mall Management System</h1>
+    <h2>Admin Login</h2>
+
+    <label>Username</label>
+    <input type="text" id="username" placeholder="Enter username">
+
+    <label>Password</label>
+    <input type="password" id="password" placeholder="Enter password">
+
+    <button class="login-btn" onclick="login()">Login</button>
+
+    <p id="error"></p>
+
+</div>
+
+
+<!-- DASHBOARD -->
+
+<div id="dashboard">
+
+    <h1>Mall Management System</h1>
+    <h2>Admin Dashboard</h2>
+
+    <hr>
+
+    <h3>Management Modules</h3>
+
+    <div class="modules">
+
+        <button onclick="shopManagement()">
+            Shop Management
+        </button>
+
+        <button onclick="shopOwnerManagement()">
+            Shop Owner Management
+        </button>
+
+        <button onclick="customerManagement()">
+            Customer Management
+        </button>
+
+        <button onclick="employeeManagement()">
+            Employee Management
+        </button>
+
+        <button onclick="floorManagement()">
+            Floor Management
+        </button>
+
+        <button onclick="reports()">
+            Reports
+        </button>
+
+        <button onclick="logout()">
+            Logout
+        </button>
+
+    </div>
+
+    <hr>
+
+    <div id="content">
+        <h3>Welcome Admin</h3>
+        <p>Select any management module.</p>
+    </div>
+
+</div>
+
+
+<script>
+
+function login() {
+
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+
+    if (username === "admin" && password === "1234") {
+
+        document.getElementById("loginPage").style.display = "none";
+
+        document.getElementById("dashboard").style.display = "block";
+
+    } 
+    else {
+
+        document.getElementById("error").innerHTML =
+        "Invalid username or password!";
+
+    }
+}
+
+
+function shopManagement() {
+
+    document.getElementById("content").innerHTML = `
+        <h2>Shop Management</h2>
+
+        <input type="text" placeholder="Shop ID">
+        <input type="text" placeholder="Shop Name">
+        <input type="text" placeholder="Category">
+        <input type="text" placeholder="Contact">
+        <input type="text" placeholder="Owner">
+        <input type="text" placeholder="Floor">
+
+        <button onclick="alert('Shop Added Successfully!')">
+            Add Shop
+        </button>
+
+        <button onclick="alert('Shop Updated Successfully!')">
+            Update
+        </button>
+
+        <button onclick="alert('Shop Deleted Successfully!')">
+            Delete
+        </button>
+    `;
+}
+
+
+function shopOwnerManagement() {
+
+    document.getElementById("content").innerHTML = `
+        <h2>Shop Owner Management</h2>
+
+        <input type="text" placeholder="Owner ID">
+        <input type="text" placeholder="Owner Name">
+        <input type="text" placeholder="Contact">
+        <input type="email" placeholder="Email">
+        <input type="text" placeholder="Associated Shop">
+
+        <button onclick="alert('Owner Added Successfully!')">
+            Add Owner
+        </button>
+    `;
+}
+
+
+function customerManagement() {
+
+    document.getElementById("content").innerHTML = `
+        <h2>Customer Management</h2>
+
+        <input type="text" placeholder="Customer ID">
+        <input type="text" placeholder="Customer Name">
+        <input type="text" placeholder="Contact">
+        <input type="email" placeholder="Email">
+
+        <button onclick="alert('Customer Added Successfully!')">
+            Add Customer
+        </button>
+    `;
+}
+
+
+function employeeManagement() {
+
+    document.getElementById("content").innerHTML = `
+        <h2>Employee Management</h2>
+
+        <input type="text" placeholder="Employee ID">
+        <input type="text" placeholder="Employee Name">
+        <input type="text" placeholder="Designation">
+        <input type="text" placeholder="Contact">
+        <input type="number" placeholder="Salary">
+
+        <button onclick="alert('Employee Added Successfully!')">
+            Add Employee
+        </button>
+    `;
+}
+
+
+function floorManagement() {
+
+    document.getElementById("content").innerHTML = `
+        <h2>Floor Management</h2>
+
+        <input type="text" placeholder="Floor ID">
+        <input type="text" placeholder="Floor Name">
+        <input type="number" placeholder="Floor Number">
+
+        <button onclick="alert('Floor Added Successfully!')">
+            Add Floor
+        </button>
+    `;
+}
+
+
+function reports() {
+
+    document.getElementById("content").innerHTML = `
+        <h2>Reports</h2>
+
+        <p>Total Shops: 10</p>
+        <p>Total Shop Owners: 8</p>
+        <p>Total Customers: 50</p>
+        <p>Total Employees: 20</p>
+        <p>Total Floors: 3</p>
+    `;
+}
+
+
+function logout() {
+
+    document.getElementById("dashboard").style.display = "none";
+
+    document.getElementById("loginPage").style.display = "block";
+
+    document.getElementById("username").value = "";
+    document.getElementById("password").value = "";
+
+    document.getElementById("error").innerHTML = "";
+}
+
+</script>
+
+</body>
+</html>
